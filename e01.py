@@ -15,14 +15,14 @@
 #   You must do this alone without a partner and without help from your classmates.
 #
 # Overview:
-#   This program draws a lovely array of winter-colored snowflakes.
+#   This program draws a lovely array of rainy raindrops (because Spring!).
 #
 ####################################################################################
 #
 # TODO A successful student will have completed the following tasks:
 #   Task 1: Refactor the code to use a main() function. (8 pts)
 #   Task 2: Ask the user to input a number between 1 and 10.  (5 pts)
-#   Task 3: Call the draw_rainstorm function, indicating how many snowflakes to draw using the user's
+#   Task 3: Call the draw_rainstorm function, indicating how many raindrops to draw using the user's
 #      input from Task 2. (6 pts)
 #   Task 4: Fix the draw_rainstorm() function by converting it to use a loop and iterate the right number
 #      of times. (10 pts)
@@ -109,7 +109,7 @@ def draw_drop(t, mycolor='blue'):
 
 def move(t):
     """
-    Moves a turtle object 75 pixels to the right and 75 pixels down.
+    Moves a turtle object 30 pixels to the right and 50 pixels down.
     DO NOT MODIFY!!!
 
     :param t: an instance of the Turtle class
@@ -145,7 +145,8 @@ def draw_rainstorm(t, numdrops):
 
 # The program starts running here
 # TODO  Refactor this program to use a main() function. The highest level of the program should include
-#       import statements, function definitions, and a call to main() ONLY
+#       import statements, function definitions, and a call to main() ONLY.  No lonely lines of code
+#       outside of functions!
 
 w = turtle.Screen()
 w.bgcolor('gray')
@@ -159,7 +160,7 @@ t.pendown()
 
 # TODO   Ask the user to input a number between 1 and 10.
 
-# TODO   Call the draw_rainstorm function, indicating how many snowflakes to draw using the user's
+# TODO   Call the draw_rainstorm function, indicating how many raindrops to draw using the user's
 #  input (instead of four)
 
 draw_rainstorm(t, 4)
