@@ -30,8 +30,11 @@
 #   Bonus: Include a new function that writes "It's February!" to the turtle screen.
 #          modify main() to use this new function correctly IF the user picked four. (+1 pt)
 #   Bonus: Modify the code so that each new raindrop is drawn with random x and y coordinates between -200 and
-#          inclusive (+1 pt)
-#   Bonus: Also modify the code to randomize the color of each raindrop (+1 pt)
+#          inclusive. (+1 pt)
+#   Bonus: Also modify the code to randomize the color of each raindrop. (+1 pt)
+#   Bonus: Also ALSO modify the code to give each raindrop a random radius between 10 and 60 inclusive. (+1 pt)
+#   BONUS BONUS: Complete all four bonus tasks. (+1 pt)
+
 
 ####################################################################################
 # Submission Instructions:
