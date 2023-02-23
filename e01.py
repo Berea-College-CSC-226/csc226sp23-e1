@@ -23,14 +23,18 @@
 #   Task 1: Refactor the code to use a main() function. (8 pts)
 #   Task 2: Ask the user to input a number between 1 and 10.  (5 pts)
 #   Task 3: Call the draw_rainstorm function, indicating how many raindrops to draw using the user's
-#      input from Task 2. (6 pts)
+#      input from Task 2 (NOT the hard-coded 5 that is already there). (6 pts)
 #   Task 4: Fix the draw_rainstorm() function by converting it to use a loop and iterate the right number
 #      of times. (10 pts)
 #   Task 5: Add docstrings and comments where appropriate, modify this header, and clean up any unused code. (6 pts)
+#
+#   The tasks below ARE NOT REQUIRED!!!  Only attempt them if you have enough time left after completing Tasks
+#   1 - 5.
+#
 #   Bonus: Include a new function that writes "It's February!" to the turtle screen.
-#          modify main() to use this new function correctly IF the user picked four. (+1 pt)
+#          modify main() to use this new function correctly ONLY IF the user picked four. (+1 pt)
 #   Bonus: Modify the code so that each new raindrop is drawn with random x and y coordinates between -200 and
-#          inclusive. (+1 pt)
+#          200 inclusive, INSTEAD OF calling move() each time you draw a new raindrop. (+1 pt)
 #   Bonus: Also modify the code to randomize the color of each raindrop. (+1 pt)
 #   Bonus: Also ALSO modify the code to give each raindrop a random radius between 10 and 60 inclusive. (+1 pt)
 #   BONUS BONUS: Complete all four bonus tasks. (+1 pt)
@@ -43,6 +47,7 @@
 ####################################################################################
 
 import turtle
+import random
 
 def colors(col):
     """
@@ -69,7 +74,7 @@ def draw_circle(t, radius=30):
     DO NOT MODIFY!!!
 
     :param t: an instance of the turtle class
-    :param radius: an integer representing the radius of the circle
+    :param radius: an integer representing the radius of the circle, default is 30
     :return: None
     """
     t.begin_fill()
@@ -92,20 +97,21 @@ def draw_triangle(t, length=60):
         t.forward(length)
     t.end_fill()
 
-def draw_drop(t, mycolor='blue'):
+def draw_drop(t, mycolor='blue', size=30):
     """
     This function draws a single raindrop on the screen.
     DO NOT MODIFY!!!
 
     :param t: an instance of the Turtle class
-    :param mycolor: a string representing a color
+    :param mycolor: a string representing a color, default is 'blue'
+    :param size: a number representing the size of the drop, default is 30
     :return: None
     """
     t.color(mycolor)
-    draw_circle(t)
+    draw_circle(t, radius=size)
     x, y = t.pos()
     t.goto(x + 30, y + 30)
-    draw_triangle(t)
+    draw_triangle(t, length=size*2)
 
 def move(t):
     """
@@ -127,10 +133,13 @@ def draw_rainstorm(t, numdrops):
     :return:
     '''
 
+    # TASK 5
     # TODO Complete the docstring for this function. Follow the format of the other docstrings in this file.
+    #      Remember to also comment other changes you make to the code, and clean up anything that isn't used.
 
+    # TASK 4
     # TODO   This code is inefficient and inflexible. Rewrite the code below to use a loop
-    #        the right number of times, based on the input parameters.
+    #        the right number of times, based on the input parameter numdrops.
 
     draw_drop(t, mycolor=colors(0 % 5))
     move(t)
@@ -144,6 +153,8 @@ def draw_rainstorm(t, numdrops):
     move(t)
 
 # The program starts running here
+
+# TASK 1
 # TODO  Refactor this program to use a main() function. The highest level of the program should include
 #       import statements, function definitions, and a call to main() ONLY.  No lonely lines of code
 #       outside of functions!
@@ -157,12 +168,14 @@ t.penup()
 t.setpos(-250, 150)
 t.pendown()
 
+# TASK 2
+# TODO   Ask the user to input a number between 1 and 10.  You may assume that the input will be valid.
 
-# TODO   Ask the user to input a number between 1 and 10.
-
+# TASK 3
 # TODO   Call the draw_rainstorm function, indicating how many raindrops to draw using the user's
-#  input (instead of four)
+#  input (instead of five).  NOTE: once the code reaches this point, the turtle Screen has already been created.
+#  When you ask for input from the keyboard, your turtle screen will freeze until you provide it.
 
-draw_rainstorm(t, 4)
+draw_rainstorm(t, 5)
 
 w.exitonclick()
